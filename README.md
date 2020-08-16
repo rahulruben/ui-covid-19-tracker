@@ -1,9 +1,9 @@
 # Covid-19 Tracker
 
-Covid-19 Tracker is a dashboard which gives a summarized and statistical data of the spread of corona virus across the globe.
+Covid-19 Tracker is a dashboard which gives a summarized and statistical data of the spread of corona virus across the globe.<br />
+The Dashboard includes feature like cases (Today, Total Cases), Recovered (Today, Today Recovered), Deaths (Today, Total Deaths).
 
 [Dashboard](https://covid-19-tracker-28fb2.web.app/)
-
 
 ## Technology Stack
 **UI Layer**: [React](https://reactjs.org/)<br />
