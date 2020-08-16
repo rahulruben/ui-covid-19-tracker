@@ -1,0 +1,108 @@
+@import "../../base/_colors.scss";
+
+
+@keyframes fadeDown {
+    0% {
+      transform: translateY(-20px);
+      opacity:0;
+    }
+    100% {
+      transform: translateY(0px);
+      opacity:1;
+    }
+  }
+.dropdown {
+    position: relative;
+    margin-right: 2em;
+    &.open > .dropdown-menu {
+        display: block;
+        animation: fadeDown .5s cubic-bezier(0, 0, 0.3, 1);
+    }
+    .dropdown-toggle {
+        font-family: "Roboto", sans-serif;
+        display: inline-block;
+        padding: 0.5em 3em;
+        margin-bottom: 0;
+        font-size: 0.875em;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        color: #2e31e6;
+        background-color: #ffffff;
+        border-color: #2e31e6;
+        border: 0.5px solid #2e31e6;
+        border-radius: 20px;
+
+        .caret {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-left: 8px;
+            vertical-align: middle;
+            border-top: 4px dashed;
+            border-top: 4px solid\9;
+            border-right: 4px solid transparent;
+            border-left: 4px solid transparent;
+        }
+    }
+
+    .dropdown-menu {
+        &::-webkit-scrollbar {
+            background-color: #fff;
+            width: 14px;
+        }
+        &::-webkit-scrollbar-track {
+            width: 14px;
+        }
+        &::-webkit-scrollbar-track:hover {
+            background-color: #f4f4f4;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: #babac0;
+            border-radius: 16px;
+            border: 2px solid #fff;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: #a0a0a5;
+            border: 2px solid #f4f4f4;
+        }
+        &::-webkit-scrollbar-button {
+            display: none;
+        }
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        z-index: 1000;
+        display: none;
+        float: left;
+        min-width: 300px;
+        padding: 5px 0;
+        margin: 2px 0 0;
+        font-size: 14px;
+        text-align: left;
+        list-style: none;
+        background-color: #fff;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        border: 1px solid #ccc;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+        overflow-y: scroll;
+        height: 400px;
+
+        li {
+            cursor: pointer;
+            padding: 0.8em;
+            &:hover {
+                background: $cd-medium-slate-blue;
+                color: $cd-white;
+            }
+        }
+    }
+}

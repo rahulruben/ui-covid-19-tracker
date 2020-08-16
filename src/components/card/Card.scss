@@ -1,0 +1,93 @@
+@import "../../base/_colors.scss";
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 0.875em;
+    width: 240px;
+    height: 100%;
+    background-color: $cd-white;
+    border-radius: 10px;
+    min-height: 150px;
+    padding: 2em;
+    border-radius: 27px;
+    position: relative;
+    cursor: pointer;
+    &::before {
+        content: "";
+        background-color: black;
+        position: absolute;
+        height: calc(100% - 20px);
+        width: calc(100% - 20px);
+        left: 12px;
+        top: 10px;
+        box-shadow: 0px 8px 14px 3px rgba(0, 0, 0, 0.1);
+        border-radius: 27px;
+        z-index: -1;
+    }
+    &__header {
+        display: flex;
+        align-items: center;
+        flex: 0.5;
+        &__icon {
+            &::before {
+                display: block;
+                content: " ";
+                background-image: url("../../base/images/virus.svg");
+                background-size: 40px 40px;
+                height: 40px;
+                width: 40px;
+                margin-right: 0.8em;
+            }
+        }
+    }
+    &__content {
+        color: $cd-light-gray;
+        &__wrapper {
+            margin-top: 0.7em;
+            text-align: center;
+            font-size: 2.3em;
+            color: $cd-medium-slate-blue;
+            font-weight: 600;
+        }
+    }
+
+    &[type="Cases"] {
+        .card__header__icon {
+            &::before {
+                background-image: url("../../base/images/virus-red.svg");
+            }
+        }
+        .card__content__wrapper__today {
+            color: $cd-red;
+        }
+    }
+    &[type="Deceased"] {
+        .card__header__icon {
+            &::before {
+                background-image: url("../../base/images/virus-black.svg");
+            }
+        }
+        .card__content__wrapper__today {
+            color: $cd-dark-gray;
+        }
+    }
+
+    &[type="Recovered"] {
+        .card__header__icon {
+            &::before {
+                background-image: url("../../base/images/virus-green.svg");
+            }
+        }
+        .card__content__wrapper__today {
+            color: $cd-green;
+        }
+    }
+}
+
+@media (max-width: 990px) {
+    .card {
+        margin-bottom: 2em;
+    }
+}

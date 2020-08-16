@@ -1,0 +1,316 @@
+@import "base/_colors.scss";
+.app {
+    position: relative;
+    overflow-y: hidden;
+    &__covid__info {
+        margin: 3em 4em;
+    }
+    &__stage {
+        background-color: $cd-medium-slate-blue;
+        height: 520px;
+        &__guidelines {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 400px;
+            ul {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            li {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                position: absolute;
+                left: 0;
+                list-style: none;
+                width: 100%;
+                text-align: center;
+                z-index: 4;
+                background-color: $cd-medium-slate-blue;
+                animation: anim-guidelines 9s linear infinite;
+                .app__stage__guidelines__icon {
+                    display: block;
+                    content: " ";
+                    background-size: 200px 200px;
+                    height: 200px;
+                    width: 200px;
+                }
+                .app__stage__guidelines__text {
+                    font-size: 2.7em;
+                    color: $cd-white;
+                    line-height: 1;
+                    &__capital {
+                        text-transform: uppercase;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+        &__symtoms {
+            &__title {
+                font-size: 2em;
+                text-transform: uppercase;
+                color: $cd-white;
+                text-align: center;
+                margin-bottom: 0.6em;
+            }
+            &__contents {
+                display: flex;
+                justify-content: center;
+                > * + * {
+                    margin-left: 4em;
+                }
+                &__item {
+                    padding: 1em;
+                    background-color: #999bef;
+                    border-radius: 62px;
+                    box-shadow: 1px 4px 10px 7px rgba(0, 0, 0, 0.25);
+                    > span {
+                        display: block;
+                        content: " ";
+                        background-size: 50px 50px;
+                        height: 50px;
+                        width: 50px;
+                    }
+                    transition: 0.4s cubic-bezier(0, 0, 0.3, 1);
+                    &:hover {
+                        transform: scale(1.2);
+                    }
+                }
+                .fever {
+                    > span {
+                        background-image: url("base/images/fever.svg");
+                    }
+                }
+                .breathing {
+                    > span {
+                        background-image: url("base/images/breathing.svg");
+                    }
+                }
+
+                .cough {
+                    > span {
+                        background-image: url("base/images/cough.svg");
+                    }
+                }
+
+                .lungs {
+                    > span {
+                        background-image: url("base/images/lungs.svg");
+                    }
+                }
+            }
+        }
+    }
+    &__stats__graph {
+        display: flex;
+        flex-direction: column;
+        margin-top: 8em;
+    }
+
+    &__stats__map {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 8em;
+    }
+}
+li:nth-child(1) {
+    z-index: 3;
+    .app__stage__guidelines__icon {
+        background-image: url("base/images/hand-wash.svg");
+    }
+    animation-delay: 0s;
+}
+li:nth-child(2) {
+    z-index: 2;
+    .app__stage__guidelines__icon {
+        background-image: url("base/images/mask.svg");
+    }
+    animation-delay: 3s;
+}
+li:nth-child(3) {
+    z-index: 1;
+    .app__stage__guidelines__icon {
+        background-image: url("base/images/hand-shake.svg");
+    }
+    animation-delay: 6s;
+}
+
+@keyframes anim-guidelines {
+    25% {
+        opacity: 1;
+    }
+    33.33% {
+        opacity: 0;
+    }
+    91.66% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes anim-guideslines {
+    0% {
+        margin-top: 10em;
+    }
+    4% {
+        margin-top: 0em;
+    }
+    31% {
+        margin-top: 0em;
+    }
+    35% {
+        margin-top: -10em;
+    }
+    64% {
+        margin-top: -10em;
+    }
+    68% {
+        margin-top: -20em;
+    }
+    96% {
+        margin-top: -20em;
+    }
+    100% {
+        margin-top: -30em;
+    }
+}
+
+@media (max-width: 991px) {
+    .app {
+        &__stage {
+            &__symtoms {
+                &__contents {
+                    > * + * {
+                        margin-left: 1em;
+                    }
+                    &__item {
+                        > span {
+                            background-size: 30px 30px;
+                            height: 30px;
+                            width: 30px;
+                        }
+                    }
+                }
+            }
+        }
+        &__stats__map {
+            flex-direction: column;
+        }
+    }
+}
+
+.app__cards {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 8em 0;
+}
+
+.animation__box {
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    li {
+        position: absolute;
+        opacity: 0;
+        display: block;
+        list-style: none;
+        width: 25px;
+        height: 25px;
+        z-index: 7;
+        animation: animate 20s linear infinite;
+
+        &::before {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            display: block;
+            content: " ";
+            background-image: url("base/images/covid-anim.svg");
+            background-size: 40px 40px;
+            height: 40px;
+            width: 40px;
+        }
+    }
+
+    li:nth-child(1) {
+        left: 86%;
+        &::before {
+            background-size: 80px 80px;
+            width: 80px;
+            height: 80px;
+        }
+        animation-delay: 0s;
+    }
+
+    li:nth-child(2) {
+        left: 12%;
+        &::before {
+            background-size: 30px 30px;
+            width: 30px;
+            height: 30px;
+        }
+        animation-delay: 1.5s;
+        animation-duration: 10s;
+    }
+
+    li:nth-child(3) {
+        left: 70%;
+        &::before {
+            background-size: 100px 100px;
+            width: 100px;
+            height: 100px;
+        }
+        animation-delay: 5.5s;
+        animation-duration: 10s;
+    }
+
+    li:nth-child(4) {
+        left: 65%;
+        &::before {
+            background-size: 40px 40px;
+            width: 40px;
+            height: 40px;
+        }
+        animation-delay: 0s;
+        animation-duration: 15s;
+    }
+
+    li:nth-child(5) {
+        left: 30%;
+        &::before {
+            background-size: 150px 150px;
+            width: 150px;
+            height: 150px;
+        }
+        animation-delay: 0s;
+    }
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-800px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 991px) {
+    .app {
+        &__covid__info {
+            margin: 3em 2em;
+        }
+        &__cards {
+            flex-wrap: wrap;
+        }
+    }
+}
