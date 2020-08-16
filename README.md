@@ -6,7 +6,7 @@ Covid-19 Tracker is a dashboard which gives a summarized and statistical data of
 
 
 ## Technology Stack
-**UI Layer**: [React](https://reactjs.org/)< br/>
+**UI Layer**: [React](https://reactjs.org/)<br />
 **Data**: [disease.sh](https://corona.lmao.ninja/)<br />
 **Charts**: [Chart.js](https://www.chartjs.org/)
 
