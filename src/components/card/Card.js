@@ -3,8 +3,22 @@ import './Card.scss';
 import { convertTorReadableFormat } from "../../base/_utils.js";
 
 function Card({ title, cases, total, ...props }) {
+    const onCardClicked = (e) => {
+        let cardContainer = e.currentTarget.parentElement,
+            cards = cardContainer.querySelectorAll('.card');
+        cards.forEach(card => {
+            if (card === e.currentTarget) {
+                card.classList.add('active');
+            } else {
+                console.log(card)
+                card.classList.remove('active');
+            }
+        })
+        props.onClick();
+    }
+   
     return (
-        <div onClick={props.onClick} className="card" type={title}>
+        <div onClick={onCardClicked} className="card" type={title}>
             <div className="card__header">
                 <span className="card__header__icon"></span>
                 <h2>{title}</h2>
