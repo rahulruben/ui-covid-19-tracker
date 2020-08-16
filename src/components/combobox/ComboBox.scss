@@ -1,25 +1,24 @@
 @import "../../base/_colors.scss";
 
-
 @keyframes fadeDown {
     0% {
-      transform: translateY(-20px);
-      opacity:0;
+        transform: translateY(-20px);
+        opacity: 0;
     }
     100% {
-      transform: translateY(0px);
-      opacity:1;
+        transform: translateY(0px);
+        opacity: 1;
     }
-  }
+}
 .dropdown {
     position: relative;
     margin-right: 2em;
     &.open > .dropdown-menu {
         display: block;
-        animation: fadeDown .5s cubic-bezier(0, 0, 0.3, 1);
+        animation: fadeDown 0.5s cubic-bezier(0, 0, 0.3, 1);
     }
     .dropdown-toggle {
-        font-family: "Roboto", sans-serif;
+        font-family: "Baloo", cursive;
         display: inline-block;
         padding: 0.5em 3em;
         margin-bottom: 0;
@@ -104,5 +103,12 @@
                 color: $cd-white;
             }
         }
+    }
+}
+
+@media (max-width: 991px) {
+    .dropdown .dropdown-toggle {
+        font-size: 0.7em;
+        padding: 0.5em 1em;
     }
 }

@@ -43,7 +43,6 @@ function App() {
 	return (
 
 		<div className="app">
-			<link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap" rel="stylesheet"></link>
 			<Header cardInfo={onCountryChanged}></Header>
 			<div className="app__stage">
 

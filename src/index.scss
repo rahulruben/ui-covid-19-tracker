@@ -1,14 +1,6 @@
 @font-face {
-    font-family: "Raleway";
-    src: url("base/fonts/Raleway-Regular.ttf");
-}
-@font-face {
-    font-family: "Roboto";
-    src: url("base/fonts/Roboto-Regular.ttf");
-}
-@font-face {
     font-family: "Baloo";
-    src: url("base/fonts/Baloo-Regular.ttf");
+    src: url("base/fonts/BalooTamma2-Regular.ttf");
 }
 @import "base/_colors.scss";
 
@@ -17,8 +9,7 @@
 }
 
 body {
-    // font-family: 'Roboto', sans-serif;
-    font-family: "Baloo Tamma 2", cursive;
+    font-family: "Baloo", cursive;
     background-color: $cd-lavender-web;
     margin: 0;
     height: 100%;
